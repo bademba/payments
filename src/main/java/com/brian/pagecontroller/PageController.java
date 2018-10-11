@@ -13,14 +13,19 @@ import javax.faces.bean.SessionScoped;
  *
  * @author BADEMBA
  */
-@ManagedBean(name="PageController")
+@ManagedBean(name = "pageController")
 @SessionScoped
 public class PageController implements Serializable{
-    //String var="c2BValidationPageContoller";
+
+   private static final long serialVersionUID = 1L;
     public String C2BValidationPageContoller(){
     
          
         return "/C2BValidation.xhtml";
     }
+    public String homePageController(){
+        return "index";
+    }
+    
     
 }

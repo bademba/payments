@@ -50,11 +50,6 @@
                                 <p:commandButton type="button" value="New" icon="ui-icon-document" />
 
                                 <p:commandButton type="button" value="Open" icon="ui-icon-folder-open" />
-
-                                <span class="ui-separator">
-                                    <span class="ui-icon ui-icon-grip-dotted-vertical" />
-                                </span>
-
                                 <p:commandButton type="button" title="Save" icon="ui-icon-disk" />
                                 <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
                                 <p:commandButton type="button" title="Print" icon="ui-icon-print" />
@@ -79,18 +74,17 @@
 
                 <p:layoutUnit position="west" size="175" header="Menu" collapsible="false">
                     <h:form>
-                        <!--<p:menu>-->
-                            <p:panelMenu style="width:200px">
-                                <p:submenu label="Resources" >
-                                    <p:menuitem value="C2B Validation" action="#{PageController.c2BValidationPageContoller}"  url="../global/C2BValidation.xhtml"/>
-                                    <p:menuitem value="Documentation" url="#" />
-                                    <p:menuitem value="Configuration" url="#" />
-                                    <p:menuitem value="Themes" url="#" />
-
-                                </p:submenu>
-                            </p:panelMenu>
-
-<!--                        </p:menu>-->
+                        <p:panelMenu style="width:200px">
+                            <p:submenu label="Resources" >
+                                <p:menuitem value="C2B Validation" action="#{PageController.c2BValidationPageContoller}"  url="../global/C2BValidation.xhtml"/>
+                                <p:menuitem value="C2B Confirmations" url="../global/welcomePrimefaces.xhtml" />
+                                <p:menuitem value="B2C" url="../global/B2C.xhtml" />
+                                <p:menuitem value="B2B" url="../global/B2B.xhtml" />
+                            </p:submenu>
+                            <p:submenu label="Reports" >
+                                <p:menuitem value="C2B Reports"/>                         
+                            </p:submenu>
+                        </p:panelMenu>
                     </h:form>
                 </p:layoutUnit>
 
@@ -121,6 +115,9 @@
                                 <h:outputText value="#{c2b.transactiontype}" />
                             </p:column>
 
+                            <!--                            <p:column headerText="ArrivalTime"> 
+                                                            <h:outputText value="#{c2b.arrivalTime}" />
+                                                        </p:column>-->
                             <p:column headerText="TxID">
                                 <h:outputText value="#{c2b.transid}" />
                             </p:column>
@@ -155,6 +152,9 @@
 
                             <p:column headerText="Sender">
                                 <h:outputText value="#{c2b.firstname}#{c2b.middlename}#{c2b.lastname}" />
+                            </p:column>
+                            <p:column headerText="CompletionDate">
+                                <h:outputText value="#{c2b.transtime}" />
                             </p:column>
 
                             <p:column style="width:32px">

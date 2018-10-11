@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Payments|Home</title>
+    </h:head>
+    <h:body>
+<!--        <h:outputStylesheet name="basgeets/custom.css" />-->
+        Payments home page
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                <!--Header-->
+
+                <h:form>
+                    <p:growl id="messages" showDetail="true" />
+
+                    <p:toolbar>
+                        <f:facet name="left">
+                            <p:commandButton type="button" value="New" icon="ui-icon-document" />
+                            <p:commandButton type="button" value="Open" icon="ui-icon-folder-open" />
+                            <p:commandButton type="button" title="Save" icon="ui-icon-disk" />
+                            <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
+                            <p:commandButton type="button" title="Print" icon="ui-icon-print" />
+                        </f:facet>
+
+                        <f:facet name="right">
+                            <p:menuButton value="#{loginBean.uname}">     
+                                <p:menuitem value="Profile" icon="fa fa-user" url="#"/>
+                                <p:menuitem value="Logout" icon="ui-icon-contact" action="#{loginBean.logout()}"/>
+
+                            </p:menuButton>
+<!--                            <p:commandButton value="Logout" id="ajax"   styleClass="ui-priority-primary" actionListener="#{loginBean.logout()}" />-->
+                        </f:facet>
+
+                    </p:toolbar>
+                </h:form>
+
+            </p:layoutUnit>
+            <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                Footer
+            </p:layoutUnit>
+            <p:layoutUnit position="west" size="200" header="Menu" collapsible="false">
+                <h:form>
+                    <p:panelMenu style="width:200px">
+                        <p:submenu label="Resources" >
+                            <p:menuitem value="C2B Validation" action="#{PageController.c2BValidationPageContoller}"  url="../global/C2BValidation.xhtml"/>
+                            <p:menuitem value="C2B Confirmations" action="#{pageController.homePageController}" url="../global/welcomePrimefaces.xhtml"/>
+                            <p:menuitem value="B2C" url="../global/B2C.xhtml" />
+                            <p:menuitem value="B2B" url="../global/B2B.xhtml" />
+                        </p:submenu>
+                        <p:submenu label="Reports" >
+                            <p:menuitem value="C2B Reports"/>                         
+                        </p:submenu>
+                    </p:panelMenu>
+                </h:form>
+            </p:layoutUnit>
+            <p:layoutUnit position="center">
+               Dashboard
+                <div style="height:500px">
+                    <h:form>
+                        <p:dashboard id="board" model="#{dashBoardCounter.model}" style="background:green">
+                            <p:panel id="c2b" header="C2B Confirmations">
+                                <h:outputText value="#{dashBoardCounter.c2BConfirmationCounter}" />
+                            </p:panel>
+                        </p:dashboard>                        
+                    </h:form>
+                    <h:form>
+                        <p:dashboard id="board" model="#{dashBoardCounter.model}">
+                            <p:panel id="stk" header="STK Transactions">
+                                <h:outputText value="#{dashBoardCounter.stkDashboardCounter}" />
+                            </p:panel>
+                        </p:dashboard>                       
+                    </h:form>
+                    <h:form>
+                        <p:dashboard id="board" model="#{dashBoardCounter.model}">
+                            <p:panel id="b2b" header="B2B Transactions">
+                                <h:outputText value="#{dashBoardCounter.b2bDashboardCounter}" />
+                            </p:panel>
+                        </p:dashboard>                       
+                    </h:form>
+                    <h:form>
+                        <p:dashboard id="board" model="#{dashBoardCounter.model}">
+                            <p:panel id="b2c" header="B2C Transactions">
+                                <h:outputText value="#{dashBoardCounter.b2cDashboardCounter}" />
+                            </p:panel>
+                        </p:dashboard>                       
+                    </h:form>
+                </div>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>

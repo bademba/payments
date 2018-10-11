@@ -5,6 +5,10 @@
  */
 package com.brian.payments.tx;
 
+import java.util.Date;
+
+ 
+
 /**
  *
  * @author BADEMBA
@@ -13,6 +17,7 @@ package com.brian.payments.tx;
 
 public class C2BTransactionsUtils {
     public String uid;
+    //public Date arrivalTime;
     public String transactiontype;
     public String transid;
     public Double transamount;
@@ -35,6 +40,15 @@ public class C2BTransactionsUtils {
         this.uid = uid;
     }
 
+//    public Date getArrivalTime() {
+//        return arrivalTime;
+//    }
+//
+//    public void setArrivalTime(Date arrivalTime) {
+//        this.arrivalTime = arrivalTime;
+//    }
+
+    
     public String getTransactiontype() {
         return transactiontype;
     }

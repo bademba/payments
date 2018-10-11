@@ -28,6 +28,7 @@ public class LoginBean implements Serializable {
     private static final long serialVersionUID = 1L;
     private String uname;
     private String password;
+    private int agentNo;
  
      
     public String getPassword() {
@@ -45,13 +46,22 @@ public class LoginBean implements Serializable {
     public void setUname(String uname) {
         this.uname = uname;
     }
+
+    public int getAgentNo() {
+        return agentNo;
+    }
+
+    public void setAgentNo(int agentNo) {
+        this.agentNo = agentNo;
+    }
  
+    
     public String loginProject() {
         boolean result = UserDAO.login(uname, password);
         if (result) {
             HttpSession session =Util.getSession();
             session.setAttribute("username", uname); 
-            return "welcomePrimefaces";
+            return "index";
         } else {
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_WARN,"Invalid Login!","Please Try Again!"));
             return "login";

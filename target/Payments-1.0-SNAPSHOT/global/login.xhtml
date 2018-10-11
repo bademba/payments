@@ -5,15 +5,15 @@
 
       >
     <h:head>
-        
-       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Login Page</title>
-	<link type="text/css"
-		href="${facesContext.externalContext.requestContextPath}/resources/css/style.css"
-		rel="stylesheet" />
-	<link type="image/x-icon"
-		href="${facesContext.externalContext.requestContextPath}/resources/images/favicon.ico"
-		rel="shortcut icon" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>Login Page</title>
+        <link type="text/css"
+              href="${facesContext.externalContext.requestContextPath}/resources/css/style.css"
+              rel="stylesheet" />
+        <link type="image/x-icon"
+              href="${facesContext.externalContext.requestContextPath}/resources/images/favicon.ico"
+              rel="shortcut icon" />
     </h:head>
     <h:body>
 
@@ -28,30 +28,43 @@
 
                         <h:outputText value="Username" />
 
-                        <p:inputText id="username" value="#{loginBean.uname}" ></p:inputText>
+                            <p:inputText id="username" value="#{loginBean.uname}" >
+                            </p:inputText>
 
-                        <p:spacer></p:spacer>
+                            <p:spacer>
+                            </p:spacer>
 
-                        <p:message for="username" ></p:message>
+                            <p:message for="username" >                            
+                            </p:message>
 
                         <h:outputText value="Password" />
 
-                        <p:password id="password" value="#{loginBean.password}"  feedback="false"></p:password>
+                            <p:password id="password" value="#{loginBean.password}"  feedback="false"></p:password>
 
-                        <p:spacer></p:spacer>
+                            <p:spacer></p:spacer>
 
-                        <p:message for="password"></p:message>
+                            <p:message for="password"></p:message>
 
-                        <p:spacer></p:spacer>
+                            <p:spacer></p:spacer>
 
+<!--                        <h:outputText value="Agent No." />
+
+                        <p:inputText id="agento" value="#{loginBean.agentNo}" >
+                            </p:inputText>
+
+                            <p:spacer></p:spacer>
+
+                            <p:message for="agentno"></p:message>
+
+                            <p:spacer></p:spacer>-->
                         <p:commandButton action="#{loginBean.loginProject}" id="loginButton" value="Login" update="loginForm" ajax="true"></p:commandButton>
 
                     </h:panelGrid>
 
                 </p:panel>
                 <p:blockUI block="loginPnl" trigger="loginButton" >
-			<p:graphicImage value="../resources/images/loader.gif" />
-		</p:blockUI>
+                    <p:graphicImage value="resources/images/loader.gif" />
+                </p:blockUI>
             </h:form>
         </div>
     </h:body> 

@@ -22,6 +22,7 @@ public class UserDAO {
                     "SELECT username, password FROM webusers WHERE username= ? and password= ? ");
             ps.setString(1, username);
             ps.setString(2, password);
+            //ps.setInt(3,agentno);
  
             ResultSet rs = ps.executeQuery();
             if (rs.next()) // found
