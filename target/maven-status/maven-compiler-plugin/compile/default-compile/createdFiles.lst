@@ -1,4 +1,15 @@
+com\brian\payments\dao\UserDAO.class
 com\brian\payments\dao\Util.class
 com\brian\db\DBConnector.class
+com\brian\payments\tx\B2BTransactionsUtils.class
+com\brian\commons\SHA.class
+com\brian\payments\tx\B2CTransactionsUtils.class
+com\brian\payments\tx\B2CTransactions.class
+com\brian\pagecontroller\PageController.class
+com\brian\payments\dashboard\dashBoardCounterController.class
 com\brian\payments\tx\C2BTransactionsUtils.class
+com\brian\payments\tx\B2BTransactions.class
+com\brian\payments\dashboard\dashBoardCounter.class
+com\brian\payments\tx\C2BTransactions.class
 com\brian\payments\bean\LoginBean.class
+com\brian\payments\dao\CommonUtils.class
