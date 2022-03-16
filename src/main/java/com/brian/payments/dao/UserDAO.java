@@ -23,6 +23,8 @@ public class UserDAO {
             ps.setString(1, username);
             ps.setString(2, password);
             //ps.setInt(3,agentno);
+            System.out.println("Username from db is ::: " +username);
+            System.out.println("pass from db is ::: " +password);
  
             ResultSet rs = ps.executeQuery();
             if (rs.next()) // found

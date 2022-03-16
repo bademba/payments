@@ -17,9 +17,9 @@ import java.sql.SQLException;
 public class DBConnector {
 
     private static final String MYSQL_DB_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String MYSQL_DB_CONNECTION = "jdbc:mysql://localhost:3306/safaricomtest";
+    private static final String MYSQL_DB_CONNECTION = "jdbc:mysql://localhost:3306/safaricomtest?autoReconnect=true&useSSL=false";
     private static final String MYSQL_DB_USER = "root";
-    private static final String MYSQL_DB_PASSWORD = "password123";
+    private static final String MYSQL_DB_PASSWORD = "93ce662a-2be4-11ec-8d3d-0242ac130003";
     private static final String POSTGRES_DB_DRIVER = "org.postgresql.Driver";
     private static final String POSTGRES_DB_CONNECTION = "jdbc:postgresql://127.0.0.1:5432/safaricomtest";
     private static final String POSTGRES_DB_USER = "postgres";
